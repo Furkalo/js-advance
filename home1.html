@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Работа с узлами DOM - методы и свойства</title>
+<!--     
+        Методы для работы с DOM
+        appendChild - добавить дочерний элемент
+        insertBefore - добавить элемент перед указанным
+        removeChild - удаление элемента
+        replaceChild - замена одного элемента на другой
+        createTextNode - создает строковой узел с указанным в качестве аргумента значением
+        innerHTML - СВОЙСТВО,  устанавливает или получает всю разметку и содержание внутри данного элемента
+        createElement - создает обычный узел элемента 
+-->
+</head>
+<body>
+ 
+<ul id = myUL>
+    <li>List Item1</li>
+    <li>List Item2</li>
+    <li>List Item3</li>
+    <li>List Item4</li>
+    <li>List Item5</li>
+</ul>
+
+<button onclick="replace()">Выбрать первый элемент</button><br>
+<button onclick="replace_last()">Выбрать последний элемент</button><br>
+<button onclick="replace_next()">Выбрать следующий элемент</button><br>
+<button onclick="replace_before()">Выбрать предыдущий элемент</button><br>
+<button onclick="append()">Добавить</button><br>
+<button onclick="restore()">Удалить</button><br>
+<button onclick="prepend()">Добавить в начало</button>
+
+<script>
+    var i = 0;
+    var ind = -1;
+
+    function replace(){
+           var newItem = document.querySelectorAll("li");
+           newItem[0].innerHTML = "<b>" + newItem[0].innerHTML + "<b>";
+    };
+
+    function replace_last(){
+        var newItem = document.querySelectorAll("li");
+        newItem[newItem.length-1].innerHTML = "<b>" + newItem[newItem.length-1].innerHTML + "<b>";
+    };
+
+    function replace_next(){
+        var newItem = document.querySelectorAll("li");
+        ind = (ind + 1) % newItem.length;
+            if( ind < newItem.length) newItem[ind].innerHTML = "<i>" + newItem[ind].innerHTML + "<i>"; 
+    };
+
+    function replace_before(){
+        var newItem = document.querySelectorAll("li");
+        i = (i + newItem.length - 1) % newItem.length;
+            if( i < newItem.length) newItem[i].innerHTML = "<i>" + newItem[i].innerHTML + "<i>"; 
+
+    };
+
+    function append(){
+        var list = document.querySelector("ul");
+        var newItem = document.createElement("li");
+        newItem.innerHTML = "NEW ITEM";
+        list.append(newItem);
+    };
+
+    function restore(){
+        var mainObj = document.getElementById("myUL");
+        var oneChild = mainObj.lastChild;
+        mainObj.removeChild(oneChild);
+    };
+
+    function prepend(){
+        var list = document.querySelector("ul");
+        var newItem = document.createElement("li");
+        newItem.innerHTML = "NEW ITEM";
+        list.prepend(newItem);
+    };
+
+</script>
+
+</body>
+</html>
