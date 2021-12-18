@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+</head>
+
+<!-- Создайте счетчик секунд, который начинает отчет с 1 и заканчивается на 30,
+также добавьте кнопки которые останавливают отчет, и запускают его заново и добавьте кнопку
+обнуляющую отcчет. Также попробуйте изменить код так чтобы отсчет начинался с 30 и заканчивался на 1. -->
+<body>
+
+<!--  
+    <button onclick="myStopFunction()">Остановить время</button><br>
+    <button onclick="myTimeoutFunction()">Запускать </button><br>
+    <button onclick="myTimeoutBegin()">обнулять отcчет</button><br>
+
+	<script type="text/javascript">
+
+        var myVar;
+        var yourVar;
+		var count = 1;
+		
+		function myTimeoutFunction(){
+            myVar = setInterval(function(){console.log(count++)}, 1000);
+            yourVar = setInterval(function(){clearInterval(myVar)}, 30000);
+		}
+		myTimeoutFunction();
+        
+        function myStopFunction() {
+            clearInterval(myVar);
+            console.log('stop interval');
+        }
+
+        function myTimeoutBegin(){
+            count = 0;
+            clearInterval(myVar);
+            console.log('stop interval');
+        }
+
+	</script>
+
+-->
+
+    <button onclick="myStopFunction()">Остановить время</button><br>
+    <button onclick="myTimeoutFunction()">Запускать </button><br>
+    <button onclick="myTimeoutBegin()">обнулять отcчет</button><br>
+
+	<script type="text/javascript">
+
+        var myVar;
+        var yourVar;
+		var count = 30;
+		
+		function myTimeoutFunction(){
+            myVar = setInterval(function(){console.log(count--)}, 1000);
+            yourVar = setInterval(function(){clearInterval(myVar)}, 30000);
+		}
+		myTimeoutFunction();
+        
+        function myStopFunction() {
+            clearInterval(myVar);
+            console.log('stop interval');
+        }
+
+        function myTimeoutBegin(){
+            count = 30;
+            clearInterval(myVar);
+            console.log('stop interval');
+        }
+
+	</script>
+</body>
+</html>

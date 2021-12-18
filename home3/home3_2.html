@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+</head>
+<body>
+    <ul id ="super"></ul>
+
+        <script>
+         
+        var people = prompt("Напишите какуй-то фразу");
+
+        var text = /\s*\s\s*/;
+        var tagList = people.split(text);
+        var list = document.querySelector("ul");
+
+        var newWords = document.createElement("li");
+            newWords.innerHTML = "UPPERCASE";
+            list.append(newWords);
+
+        for(var i = 0; i < tagList.length; i++){
+            var newItem = document.createElement("li");
+            newItem.innerHTML = tagList[i];
+            list.append(newItem);
+        }
+
+        var patt = new RegExp("a", "g");
+        var result = people.match(patt);
+        document.write(result.length);
+
+        var litleWord = document.createElement("li");
+            litleWord.innerHTML = "uppercase";
+            list.append(litleWord);
+     
+        var litleWordTwo = document.createElement("li");
+            litleWordTwo.innerHTML = "uppercase";
+            list.append(litleWordTwo);
+                
+        </script>
+</body>
+</html>
