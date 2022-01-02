@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        #move{
+            position: relative; 
+            background-color: blueviolet; 
+            height: 200px; 
+            width: 200px;
+        }
+    </style>
+
+    <input type="button" value="нажми меня" name="move1">
+    <div id="move"></div>
+
+    <script>
+        var btn = document.querySelector('input[name="move1"]')
+            btn.addEventListener('click', toggleMove)
+
+            var movingElement = document.getElementById('move');
+            var phi = Math.PI / 2;
+            var rho2 = 3;
+            var rho = 6;
+            var moveEnabled = false;
+
+            function move() {
+            if (moveEnabled) {
+                var top = rho * Math.cos(phi)
+                var left = rho * Math.sin(phi)
+                movingElement.style.transform = `translate(${left}px, ${top}px)`;
+
+            rho += rho2;
+            
+            }
+
+            window.requestAnimationFrame(move)
+            }
+
+            function toggleMove() {
+            moveEnabled = !moveEnabled;
+            console.log('moveEnabled', moveEnabled)
+            }
+
+            window.requestAnimationFrame(move);
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+	<style>
+		.div1 {
+			display:none;
+		}
+		#wrap {
+			border: 1px solid black;
+			padding: 10px;
+			margin: 10px;
+		}
+		#first {
+			border: 1px solid red;
+			padding: 10px;
+			margin: 10px;
+		}
+		#second {
+			border: 1px solid green;
+			padding: 10px;
+			margin: 10px;
+		}
+		#third {
+			border: 1px solid pink;
+			padding: 10px;
+			margin: 10px;
+		}
+		#fourth {
+			border: 1px solid blue;
+			padding: 10px;
+			margin: 10px;
+		}
+		#fifth {
+			border: 1px solid orange;
+			padding: 10px;
+			margin: 10px;
+		}
+	</style>
+	<script>
+		window.onload = function (){
+			var wrap = document.getElementById("wrap");
+			console.log(wrap);
+			function deleteTextUsingButton(e){
+				var target = e && e.target || event.srcElement;
+				var div = target.parentNode;
+				console.log(div);//смотрю какой див удалил(для себя)
+				div.classList.add("div1");
+			}
+			wrap.addEventListener("click", deleteTextUsingButton);
+		}
+	</script>
+</head>
+<body>
+	<div id = "wrap">
+		<div id = "first">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius tempora repellat tenetur iste vitae libero earum corrupti, laborum reiciendis obcaecati odit illum facere, aliquam sequi velit. Magnam at fugit impedit?</p>
+			<button class = "removeText">Remove this text</button>
+		</div>
+		<div id = "second">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius tempora repellat tenetur iste vitae libero earum corrupti, laborum reiciendis obcaecati odit illum facere, aliquam sequi velit. Magnam at fugit impedit?</p>
+			<button class = "removeText">Remove this text</button>
+		</div>
+		<div id = "third">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius tempora repellat tenetur iste vitae libero earum corrupti, laborum reiciendis obcaecati odit illum facere, aliquam sequi velit. Magnam at fugit impedit?</p>
+			<button class = "removeText">Remove this text</button>
+		</div>
+		<div id = "fourth">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius tempora repellat tenetur iste vitae libero earum corrupti, laborum reiciendis obcaecati odit illum facere, aliquam sequi velit. Magnam at fugit impedit?</p>
+			<button class = "removeText">Remove this text</button>
+		</div>
+		<div id = "fifth">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius tempora repellat tenetur iste vitae libero earum corrupti, laborum reiciendis obcaecati odit illum facere, aliquam sequi velit. Magnam at fugit impedit?</p>
+			<button class = "removeText">Remove this text</button>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,user-scalable=no">
+    </head>
+    <script type="text/javascript">
+        window.onload = function () {
+
+            var firstList = document.querySelector("a");
+            var text = document.querySelector("div");
+            var secondBtn = document.getElementById("nextbutton");
+
+            firstList.addEventListener("click",
+                function () {
+                    if (text.style.display=="none") text.style.display="";
+                        else text.style.display="none";
+                 });
+
+                secondBtn.addEventListener("click",
+                    function () {
+                        if (firstList.style.display=="none") firstList.style.display="";
+                            else firstList.style.display="none";
+                    });
+        };
+
+    </script>
+    <body>
+        <a href="#">Link</a>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto doloremque, 
+            ducimus provident numquam neque, iusto eos ipsum asperiores aperiam tenetur enim 
+            commodi voluptas, temporibus maiores? Laboriosam totam nihil expedita quis.
+        </div>
+        <button id="nextbutton">Remove</button> 
+
+    </body>
+</html>

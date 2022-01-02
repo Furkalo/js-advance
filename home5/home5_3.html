@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+</head>
+<body>
+    <script>
+
+        window.onload = function () {
+          
+            var secondBtn = document.getElementById("main-div");
+            secondBtn.addEventListener("click", clickHandlerFirst);
+
+            function clickHandlerFirst(e) {
+            var target = e && e.target || window.event.srcElement;
+            var dataToggleId = target.getAttribute('data-tooltip');
+            if (!dataToggleId) {
+                return
+            };
+            document.getElementById('lol').innerHTML = dataToggleId;
+        };
+    };
+    </script>
+    </head>
+    <body>
+      <div id="main-div">
+        <span data-tooltip="наведите">наведите</span>
+        <span data-tooltip="для">для</span>
+        <span data-tooltip="подсказки">подсказки</span>
+        <p id= "lol"></p>
+    </div>
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+    
+</head>
+<body>
+   <script>/*
+    class Human {
+        constructor(walk, eat, drink) {
+            this.walk = walk;
+            this.eat = eat;
+            this.drink = drink;
+        }
+        showName(){
+            document.write("Он гуляет " + this.walk + ", ест " + this.eat + ", пьет " + this.drink +"<br/>");
+        };  
+    };
+    class Soldier extends Human{
+        constructor(walk, eat, drink, shoot){
+            super(walk, eat, drink);
+            this.shoot = shoot;
+        } 
+        showName(){
+            document.write("Он гуляет " + this.walk + ", ест " + this.eat + ", пьет " + this.drink + " и стреляет " + this.shoot +"<br/>");
+        };  
+    };
+    class Doctor extends Human{
+        constructor(walk, eat, drink, cure){
+            super(walk, eat, drink);
+            this.cure = cure;
+        } 
+        showName(){
+            document.write("Он гуляет " + this.walk + ", ест " + this.eat + ", пьет " + this.drink + " и лечить очено " + this.cure +"<br/>");
+        }; 
+    };
+
+    let me = new Human('всегда' , 'мало', 'воду');
+    let meSoldier = new Soldier('быстро', 'вкусно', 'лимонад' ,'быстро');
+    let meDoctor = new Doctor('медленно', 'вкусно', 'сок' ,'дорого');
+
+    me.showName();
+    meSoldier.showName();
+    meDoctor.showName();
+*/
+
+
+    class Human {
+        constructor(core) {
+            this.core = core;
+        }
+    };
+
+    class Doctor extends Human{
+        constructor(walk, eat, drink, core){
+            super(core);
+            this.walk = walk;
+            this.eat = eat;
+            this.drink = drink;
+        } 
+        showName(){
+            document.write("Он гуляет " + this.walk + ", ест " + this.eat + ", пьет " + this.drink + " и лечит " + this.core +"<br/>");
+        }  
+    };
+
+        function Dentist(walk, eat, drink, core) {
+            this.walk = walk;
+            this.eat = eat;
+            this.drink = drink;
+            this.core = function () {
+                document.write("лечит зуби" + "<br/>"); 
+            };
+        };
+
+    function Surgeon(walk, eat, drink ,core) {
+        this.walk = walk;
+        this.eat = eat;
+        this.drink = drink;
+        this.core = function () {
+            document.write("делает операцию"); 
+        };
+    };
+
+    Dentist.prototype = new Doctor();
+    Surgeon.prototype = new Doctor();
+
+        var doctor = new Doctor('медленно', 'вкусно', 'сок' ,'дорого');
+        var dentist = new Dentist('всегда' , 'мало', 'воду');
+        var surgeon = new Surgeon('часто' , 'мало', 'воду');
+
+        doctor.showName(); 
+        dentist.core();
+        surgeon.core();
+    </script>
+</body>
+</html>
