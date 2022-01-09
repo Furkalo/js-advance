@@ -1,0 +1,84 @@
+<!-- Создайте страницу которая запрашивает имя пользователя, если пользователь вводит "Admin" либо "admin" он попадает на страницу, 
+    которая оповещает его о том что " Пользоваетль Admin(не статическая строка, а данные что ввел пользователь) вошел в систему" 
+    а рядом разместите кнопку "Выход" которая вернет пользователя к модальному окну ввода логина. Реализуйте код как для куки так 
+    и для localstorage. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+   <script type="text/javascript">
+
+    var cookieName="login";
+
+        function askLogin(){
+            var login = prompt('Enter username', ''); 
+            
+            if (login=='admin'||login=='Admin'){ 
+                
+                document.cookie = 'login =' + login +';'; 
+                Success(); 
+
+            } else if (login===null) { 
+                return;
+            } else {  
+                alert('Try again');
+                askLogin();
+            }
+        };
+
+        function start(){ 
+            user = getCookies();
+
+            if (user=='admin' || user=='Admin'){
+                alert('You entered as ' + user);
+            } else {
+                askLogin(); 
+            }
+        };
+
+        function getCookies(){ 
+
+            var allcookies = document.cookie;
+            var pos = allcookies.indexOf(cookieName + "=");  
+            var start = pos + cookieName.length + 1;
+            var end = allcookies.indexOf(';', start); 
+            
+            if (end == -1){ 
+                end = allcookies.length; 
+            }
+
+            var value = allcookies.substring(start, end); 
+            return decodeURIComponent(value); 
+        }
+
+        function Success(cookieName){ 
+            var user = getCookies();
+            pattern = '<p id = "paragraph"> User : ' +  user + ' successfully entered the system!</p><br/><button id = "log">Exit</button>';
+            body = document.querySelector('body');
+
+            body.insertAdjacentHTML('afterBegin', pattern);
+            document.querySelector('#log').addEventListener('click', exit);
+        }
+
+        function exit(){
+
+            var paragraph = document.querySelector('#paragraph');
+            var logout = document.querySelector('#log');
+            var user = getCookies();
+
+            paragraph.style.display = 'none';
+            logout.style.display = 'none';
+
+            document.cookie = 'login =' + user +';' + 'max-age =' + 0 +';';
+            location.reload();
+        }
+
+    
+        start(); 
+      
+
+   </script>
+</body>
+</html>

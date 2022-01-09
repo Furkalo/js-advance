@@ -1,0 +1,57 @@
+    <!-- Создайте страницу которая запрашивает имя пользователя, если пользователь вводит "Admin" либо "admin" он попадает на страницу, которая оповещает его о том что " Пользоваетль Admin(не статическая строка, а данные что ввел пользователь) вошел в систему" а рядом разместите кнопку "Выход" которая вернет пользователя к модальному окну ввода логина. Реализуйте код как для куки так и для localstorage. -->
+    <!DOCTYPE html>
+    <html>
+    <head>
+       <title></title>
+    </head>
+    <body>
+       <script type="text/javascript">
+ 
+            function askLogin(){
+                
+                var login = prompt('Enter username, please', ''); 
+                if (login=='admin'||login=='Admin'){
+                    
+                    localStorage.login = login; 
+                    Success();
+
+                } else if (login===null) {
+                    return;
+                } else {
+                    alert('Incorrect name. Try again');
+                    askLogin();
+                }
+            };
+ 
+            function start(){
+                if (localStorage.getItem('login')=='admin'||localStorage.getItem('login')=='Admin'){
+                    alert('You entered as ' + localStorage.getItem('login'));
+                } else {
+                    askLogin(); 
+                }
+            };
+ 
+            function Success(){
+                var user = localStorage.getItem('login'),
+                    pattern = '<p id = "paragraph"> User :' +  user + ' successfully entered the system!</p><br/><button id = "log">Exit</button>',
+                    body = document.querySelector('body');
+    
+                body.insertAdjacentHTML('afterBegin', pattern);
+                document.querySelector('#log').addEventListener('click', exit);
+            }
+ 
+            function exit(){
+                var paragraph = document.querySelector('#paragraph');
+                var logout = document.querySelector('#log');
+    
+                paragraph.style.display = 'none';
+                logout.style.display = 'none';
+                localStorage.removeItem('login');
+                location.reload();
+            }
+ 
+        start();
+ 
+       </script>
+    </body>
+    </html>
