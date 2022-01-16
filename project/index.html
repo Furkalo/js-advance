@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+   <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+   <header id="header" class="header lock-padding"></header>
+   <div class="star">
+      <img src="star.png">
+   </div>
+   <ul id="menu">
+      <li class="menu__item">
+         <a href="#popup">Luke Skywalker</a>
+      </li>
+      <li class="menu__item">
+         <a href="#popup1">C-3PO</a>
+      </li>
+      <li class="menu__item">
+         <a href="#popup2">R2-D2</a>
+      </li>
+      <li class="menu__item">
+         <a href="#popup3">Darth Vader</a>
+      </li>
+      <li class="menu__item">
+         <a href="#popup4">Leia Organa</a>
+      </li>
+   </ul>
+   <ul id="menu-hide">
+      <li class="menu__item1">
+         <a href="#popup5">Owen Lars</a>
+      </li>
+      <li class="menu__item1">
+         <a href="#popup6">Beru Whitesun lars</a>
+      </li>
+      <li class="menu__item1">
+         <a href="#popup7">R5-D4</a>
+      </li>
+      <li class="menu__item1">
+         <a href="#popup8">Biggs Darklighter</a>
+      </li>
+      <li class="menu__item1">
+         <a href="#popup9">Obi-Wan Kenobi</a>
+      </li>
+   </ul>
+
+   <div class="top">
+      <img onclick="myFinish()" src="top.png">
+   </div>
+   <div class="under">
+      <img onclick="myBegin()" src="under.png">
+   </div>
+
+   <div id="popup" class="popup">
+      <a href="#header" class="popup__area"></a>
+      <div class="popup__body">
+         <div class="popup__content">
+            <a href="#header" class="popup__close">X</a>
+            <div class="popup__title">Luke Skywalker</div>
+            <div class="popup__text">
+               <center><img src="Luke.png"></center>
+               <p>Gender: male</p>
+               <p>Berth: 19BBY</p>
+               <p>Planet: Tatooine</p>
+               <p>Films: A New Hope , The Empire Strikes Back , Return of the Jedi , Revenge of the Sith</p>
+               <p>Species: No species</p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="popup1" class="popup">
+      <a href="#header" class="popup__area"></a>
+      <div class="popup__body">
+         <div class="popup__content">
+            <a href="#header" class="popup__close">X</a>
+            <div class="popup__title">C-3PO</div>
+            <div class="popup__text">
+               <p>Gender: n/a</p>
+               <p>Berth: 112BBY</p>
+               <p>Planet: Tatooine</p>
+               <p>Films: A New Hope, The Empire Strikes Back, Return of the Jedi, The Phantom Menace, Attack of the Clones, Revenge of the Sith</p>
+               <p>Species: Droid</p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="popup2" class="popup">
+      <a href="#header" class="popup__area"></a>
+      <div class="popup__body">
+         <div class="popup__content">
+            <a href="#header" class="popup__close">X</a>
+            <div class="popup__title">R2-D2</div>
+            <div class="popup__text">
+               <p>Gender: n/a</p>
+               <p>Berth: 33BBY</p>
+               <p>Planet: Naboo</p>
+               <p>Films: A New Hope, The Empire Strikes Back, Return of the Jedi, Revenge of the Sith</p>
+               <p>Species: Droid</p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="popup3" class="popup">
+      <a href="#header" class="popup__area"></a>
+      <div class="popup__body">
+         <div class="popup__content">
+            <a href="#header" class="popup__close">X</a>
+            <div class="popup__title">Darth Vader</div>
+            <div class="popup__text">
+               <center><img src="MegaStar.png"></center>
+               <p>Gender: male</p>
+               <p>Berth: 41.9BBY</p>
+               <p>Planet: Tatooine</p>
+               <p>Films: A New Hope, The Empire Strikes Back, Return of the Jedi, Revenge of the Sith</p>
+               <p>Species: No species</p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="popup4" class="popup">
+      <a href="#header" class="popup__area"></a>
+      <div class="popup__body">
+         <div class="popup__content">
+            <a href="#header" class="popup__close">X</a>
+            <div class="popup__title">Leia Organa</div>
+            <div class="popup__text">
+               <p>Gender: female</p>
+               <p>Berth: 19BBY</p>
+               <p>Planet: Alderaan</p>
+               <p>Films: A New Hope, The Empire Strikes Back, Return of the Jedi, Revenge of the Sith</p>
+               <p>Species: No species</p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="popup5" class="popup">
+      <a href="#header" class="popup__area"></a>
+      <div class="popup__body">
+         <div class="popup__content">
+            <a href="#header" class="popup__close">X</a>
+            <div class="popup__title">Owen Lars</div>
+            <div class="popup__text">
+               <p>Gender: male</p>
+               <p>Berth: 52BBY</p>
+               <p>Planet: Tatooine</p>
+               <p>Films: A New Hope, Attack of the Clones, Revenge of the Sith</p>
+               <p>Species: No species</p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="popup6" class="popup">
+      <a href="#header" class="popup__area"></a>
+      <div class="popup__body">
+         <div class="popup__content">
+            <a href="#header" class="popup__close">X</a>
+            <div class="popup__title">Beru Whitesun lars</div>
+            <div class="popup__text">
+               <p>Gender: female</p>
+               <p>Berth: 47BBY</p>
+               <p>Planet: Tatooine</p>
+               <p>Films: A New Hope, Attack of the Clones, Revenge of the Sith</p>
+               <p>Species: No species</p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="popup7" class="popup">
+      <a href="#header" class="popup__area"></a>
+      <div class="popup__body">
+         <div class="popup__content">
+            <a href="#header" class="popup__close">X</a>
+            <div class="popup__title">R5-D4</div>
+            <div class="popup__text">
+               <p>Gender: n/a</p>
+               <p>Berth: unknown</p>
+               <p>Planet: Tatooine</p>
+               <p>Films: A New Hope</p>
+               <p>Species: Droid</p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="popup8" class="popup">
+      <a href="#header" class="popup__area"></a>
+      <div class="popup__body">
+         <div class="popup__content">
+            <a href="#header" class="popup__close">X</a>
+            <div class="popup__title">Biggs Darklighter</div>
+            <div class="popup__text">
+               <p>Gender: male</p>
+               <p>Berth:24BBY</p>
+               <p>Planet:Tatooine</p>
+               <p>Films: A New Hope</p>
+               <p>Species: No species</p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="popup9" class="popup">
+      <a href="#header" class="popup__area"></a>
+      <div class="popup__body">
+         <div class="popup__content">
+            <a href="#header" class="popup__close">X</a>
+            <div class="popup__title">Obi-Wan Kenobi</div>
+            <div class="popup__text">
+               <p>Gender: male</p>
+               <p>Berth: 57BBY</p>
+               <p>Planet: Stewjon</p>
+               <p>Films: A New Hope, The Empire Strikes Back, Return of the Jedi, he Phantom Menace, Attack of the Clones, Revenge of the Sith</p>
+               <p>Species:No species</p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <script>
+      var firstList = document.getElementsByClassName("under");
+      var text = document.getElementById("menu");
+      var hide = document.getElementById("menu-hide");
+
+      function myBegin() {
+         text.style.display = "none";
+         hide.style.display = "";
+      }
+      
+      function myFinish() {
+         text.style.display = "";
+         hide.style.display = "none"
+      }
+
+   </script>
+</body>
+</html>
